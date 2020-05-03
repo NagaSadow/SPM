@@ -6,7 +6,7 @@ from thinkdsp import read_wave, CosSignal
 
 
 
-wave = read_wave('105977__wcl10__favorite-station.wav')
+wave = read_wave('105977__wcfl10__favorite-station.wav')
 
 carrier_sig = CosSignal(freq=440)
 carrier_wave = carrier_sig.make_wave(duration=wave.duration, framerate=wave.framerate)
@@ -19,7 +19,7 @@ modulated.play('out1.wav')
 
 
 
-y, sr = librosa.load('105977__wcl10__favorite-station.wav', sr=44100) # y is a numpy array of the wav file, sr = sample rate
+y, sr = librosa.load('105977__wcfl10__favorite-station.wav', sr=44100) # y is a numpy array of the wav file, sr = sample rate
 y_shifted = librosa.effects.pitch_shift(y, sr, n_steps=-8) # shifted by n_steps
 # pitch shift - a step is equal to a semitone
 write('out2.wav', 44100, y_shifted)
